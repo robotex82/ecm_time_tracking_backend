@@ -1,0 +1,6 @@
+/= form.input :begin_at, as: :string, input_html: { type: :'datetime-local', value: localize(form.object.begin_at, format: "%d.%m.%Y %H:%I") }
+= form.input :begin_at, as: :string, input_html: { type: :'datetime-local', value: localize(form.object.begin_at, format: "%Y-%m-%dT%H:%M:%S.00") }
+/= form.input :end_at, as: :string, input_html: { type: :'datetime-local' }
+= form.input :end_at, as: :string, input_html: { type: :'datetime-local', value: localize(form.object.end_at, format: "%Y-%m-%dT%H:%M:%S.00") }
+= form.input :break_length_in_minutes
+= form.input :description

@@ -1,0 +1,9 @@
+= table.row :tracker, as: :association, label_method: :human
+= table.row :begin_at
+= table.row :end_at
+= table.row :break_length_in_minutes
+= table.row :overtime  do |resource|
+  = [resource.overtime / 3600, resource.overtime / 60 % 60, resource.overtime % 60].map { |t| t.to_i.to_s.rjust(2,'0') }.join(':')
+= table.row :description
+= table.row :created_at
+= table.row :updated_at

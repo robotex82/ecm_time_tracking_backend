@@ -1,0 +1,9 @@
+= table.column :begin_at
+= table.column :end_at
+= table.column :length do |resource|
+  = [resource.length / 3600, resource.length / 60 % 60, resource.length % 60].map { |t| t.to_i.to_s.rjust(2,'0') }.join(':')
+= table.column :break_length_in_minutes
+= table.column :overtime do |resource|
+  = [resource.overtime / 3600, resource.overtime / 60 % 60, resource.overtime % 60].map { |t| t.to_i.to_s.rjust(2,'0') }.join(':')
+= table.column :description
+= table.timestamps
