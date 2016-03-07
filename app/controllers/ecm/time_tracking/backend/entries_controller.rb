@@ -10,7 +10,7 @@ module Ecm
 
         def permitted_params
           p = params.dup; p[:entry].merge!(tracker_id: current_user.id)
-          p.require(:entry).permit(:begin_at, :end_at, :tracker_id, :break_length_in_minutes)
+          p.require(:entry).permit(:begin_at, :end_at, :tracker_id, :break_length_in_minutes, :entry_type_id)
         end
       end
     end

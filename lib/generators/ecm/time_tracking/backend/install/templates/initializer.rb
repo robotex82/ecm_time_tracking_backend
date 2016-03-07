@@ -2,10 +2,12 @@ Ecm::TimeTracking::Backend.configure do |config|
   # Set the resources, that will be shown in the backend menu.
   # 
   # Default: config.registered_controllers = -> {[
-  #            Ecm::TimeTracking::Backend::Entriesontroller
-  # ]}
+  #            Ecm::TimeTracking::Backend::EntryTypesController,
+  #            Ecm::TimeTracking::Backend::EntriesController
+  #          ]}
   # 
   config.registered_controllers = -> {[
+    Ecm::TimeTracking::Backend::EntryTypesController,
     Ecm::TimeTracking::Backend::EntriesController
   ]}
 
