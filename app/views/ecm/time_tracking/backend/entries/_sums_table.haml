@@ -1,0 +1,15 @@
+.panel.panel-default
+  .panel-heading
+    .panel-title
+      %h3= Ecm::TimeTracking::SumsService.model_name.human
+  .table
+    - sums = Ecm::TimeTracking::SumsService.call(entries: entries)
+    - if sums.success?
+      = render_resource(sums, as: :bootstrap_attribute_table) do |table|
+        = table.row :overtime do |resource|
+          = [resource.overtime / 3600, resource.overtime / 60 % 60, resource.overtime % 60].map { |t| t.to_i.to_s.rjust(2,'0') }.join(':')
+        - table.resource.count_by_entry_type.each do |entry_type, count|
+          = table.row entry_type.identifier do |r|
+            = count
+    - else
+      = sums.errors.full_messages.to_sentence

@@ -1,3 +1,9 @@
 de:
   classes:
     ecm/time_tracking/backend/engine: "Zeiterfassung"
+  ecm:
+    time_tracking:
+      backend:
+        entries:
+          overtime_chart:
+            title: 'Überzeit'

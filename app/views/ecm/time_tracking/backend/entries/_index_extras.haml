@@ -1,23 +1,2 @@
-.panel.panel-default
-  .panel-heading
-    .panel-title
-      %h3= Ecm::TimeTracking::SumsService.model_name.human
-  .table
-    - @sums = Ecm::TimeTracking::SumsService.call(entries: @collection)
-    - if @sums.success?
-      = render_resource(@sums, as: :bootstrap_attribute_table) do |table|
-        = table.row :overtime do |resource|
-          = [resource.overtime / 3600, resource.overtime / 60 % 60, resource.overtime % 60].map { |t| t.to_i.to_s.rjust(2,'0') }.join(':')
-        - table.resource.count_by_entry_type.each do |entry_type, count|
-          = table.row entry_type.identifier do |r|
-            = count
-    - else
-      = @sums.errors.full_messages.to_sentence
-
-.panel.panel-default
-  .panel-heading
-    .panel-title
-      %h3= 'Foo'
-    .panel-body
-      - data = @collection.group_by { |t| I18n.l(t.begin_at.to_date, format: :short) }.each_with_object({}) {|(k, v), h| h[k] = (v.map(&:overtime).reduce(0, :+) / 3600) }
-      = column_chart data
+= render 'sums_table', entries: @collection
+= render 'overtime_chart', entries: @collection

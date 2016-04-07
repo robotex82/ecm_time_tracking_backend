@@ -1,0 +1,7 @@
+.panel.panel-default
+  .panel-heading
+    .panel-title
+      %h3= t(".title")
+    .panel-body
+      - data = entries.group_by { |t| t.begin_at.to_date }.sort.each_with_object({}) {|(k, v), h| h[I18n.l(k, format: :short)] = (v.map(&:overtime).reduce(0, :+) / 3600) }
+      = column_chart data
