@@ -1,0 +1,4 @@
+= form.association :tracker, collection: Ecm::TimeTracking::Configuration.tracker_class_name.constantize.all, label_method: :human
+= form.input :identifier
+= form.input :enabled_from, as: :string, input_html: { type: :'datetime-local', value: localize(form.object.enabled_from, format: "%Y-%m-%dT%H:%M:%S.00") }
+= form.input :enabled_to, as: :string, input_html: { type: :'datetime-local', value: localize(form.object.enabled_to, format: "%Y-%m-%dT%H:%M:%S.00") }

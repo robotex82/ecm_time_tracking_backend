@@ -3,13 +3,15 @@ Ecm::TimeTracking::Backend.configure do |config|
   #
   # Default: config.registered_controllers = -> {[
   #            Ecm::TimeTracking::Backend::EntryTypesController,
-  #            Ecm::TimeTracking::Backend::EntriesController
+  #            Ecm::TimeTracking::Backend::EntriesController,
+  #            Ecm::TimeTracking::Backend::TrackerCalculationSchemasController
   #          ]}
   #
   config.registered_controllers = lambda {
     [
       Ecm::TimeTracking::Backend::EntryTypesController,
-      Ecm::TimeTracking::Backend::EntriesController
+      Ecm::TimeTracking::Backend::EntriesController,
+      Ecm::TimeTracking::Backend::TrackerCalculationSchemasController
     ]
   }
 
