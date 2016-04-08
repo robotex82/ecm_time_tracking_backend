@@ -1,9 +1,9 @@
 .panel.panel-default
   .panel-heading
     .panel-title
-      %h3= Ecm::TimeTracking::SumsService.model_name.human
+      %h3= Ecm::TimeTracking::SoftwareDeveloperSumsService.model_name.human
   .table
-    - sums = Ecm::TimeTracking::SumsService.call(entries: entries)
+    - sums = Ecm::TimeTracking::SoftwareDeveloperSumsService.call(entries: entries)
     - if sums.success?
       = render_resource(sums, as: :bootstrap_attribute_table) do |table|
         = table.row :overtime do |resource|
