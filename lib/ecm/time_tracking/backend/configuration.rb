@@ -18,7 +18,7 @@ module Ecm
         end
 
         mattr_accessor :current_tracker_id_proc do
-          ->(controller) { controller.current_user.try(:id) }
+          -> { current_user.try(:id) }
         end
       end
     end

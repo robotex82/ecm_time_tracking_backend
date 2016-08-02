@@ -27,7 +27,7 @@ Ecm::TimeTracking::Backend.configure do |config|
 
   # Proc that will be used to retrieve the current tracker id.
   # 
-  # Default: config.current_tracker_id_proc = ->(controller) { controller.current_user.try(:id) }
+  # Default: config.current_tracker_id_proc = -> { current_user.try(:id) }
   # 
-  config.current_tracker_id_proc = ->(controller) { controller.current_user.try(:id) }
+  config.current_tracker_id_proc = -> { current_user.try(:id) }
 end
