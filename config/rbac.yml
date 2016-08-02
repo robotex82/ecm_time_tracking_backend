@@ -1,0 +1,56 @@
+defaults:
+  permissions:
+    - ecm/time_tracking/backend/engine
+    - ecm/time_tracking/entry/index
+    - ecm/time_tracking/entry/show
+    - ecm/time_tracking/entry/new
+    - ecm/time_tracking/entry/create
+    - ecm/time_tracking/entry/edit
+    - ecm/time_tracking/entry/update
+    - ecm/time_tracking/entry/destroy
+    - ecm/time_tracking/entry_type/index
+    - ecm/time_tracking/entry_type/show
+    - ecm/time_tracking/entry_type/new
+    - ecm/time_tracking/entry_type/create
+    - ecm/time_tracking/entry_type/edit
+    - ecm/time_tracking/entry_type/update
+    - ecm/time_tracking/entry_type/destroy
+    - ecm/time_tracking/tracker_calculation_schema/index
+    - ecm/time_tracking/tracker_calculation_schema/show
+    - ecm/time_tracking/tracker_calculation_schema/new
+    - ecm/time_tracking/tracker_calculation_schema/create
+    - ecm/time_tracking/tracker_calculation_schema/edit
+    - ecm/time_tracking/tracker_calculation_schema/update
+    - ecm/time_tracking/tracker_calculation_schema/destroy
+  roles:
+    ecm/time_tracking/administrator:
+      - ecm/time_tracking/backend/engine
+      - ecm/time_tracking/entry/index
+      - ecm/time_tracking/entry/show
+      - ecm/time_tracking/entry/new
+      - ecm/time_tracking/entry/create
+      - ecm/time_tracking/entry/edit
+      - ecm/time_tracking/entry/update
+      - ecm/time_tracking/entry/destroy
+      - ecm/time_tracking/entry_type/index
+      - ecm/time_tracking/entry_type/show
+      - ecm/time_tracking/entry_type/new
+      - ecm/time_tracking/entry_type/create
+      - ecm/time_tracking/entry_type/edit
+      - ecm/time_tracking/entry_type/update
+      - ecm/time_tracking/entry_type/destroy
+      - ecm/time_tracking/tracker_calculation_schema/index
+      - ecm/time_tracking/tracker_calculation_schema/show
+      - ecm/time_tracking/tracker_calculation_schema/new
+      - ecm/time_tracking/tracker_calculation_schema/create
+      - ecm/time_tracking/tracker_calculation_schema/edit
+      - ecm/time_tracking/tracker_calculation_schema/update
+      - ecm/time_tracking/tracker_calculation_schema/destroy
+    ecm/time_tracking/reviewer:
+      - ecm/time_tracking/backend/engine
+      - ecm/time_tracking/entry/index
+      - ecm/time_tracking/entry/show
+      - ecm/time_tracking/entry_type/index
+      - ecm/time_tracking/entry_type/show
+      - ecm/time_tracking/tracker_calculation_schema/index
+      - ecm/time_tracking/tracker_calculation_schema/show
