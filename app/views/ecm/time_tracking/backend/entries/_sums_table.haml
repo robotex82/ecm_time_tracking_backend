@@ -1,9 +1,10 @@
+- sums_service = (Ecm::TimeTracking::TrackerCalculationSchema.where(tracker: current_user).first&.identifier || Ecm::TimeTracking.default_calculation_schema).constantize
 .panel.panel-default
   .panel-heading
     .panel-title
-      %h3= Ecm::TimeTracking::SoftwareDeveloperSumsService.model_name.human
+      %h3= sums_service.model_name.human
   .table
-    - sums = Ecm::TimeTracking::SoftwareDeveloperSumsService.call(entries: entries)
+    - sums = sums_service.call(entries: entries)
     - if sums.success?
       = render_resource(sums, as: :bootstrap_attribute_table) do |table|
         = table.row :overtime do |resource|
