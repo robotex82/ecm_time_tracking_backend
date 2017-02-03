@@ -54,3 +54,7 @@ defaults:
       - ecm/time_tracking/entry_type/show
       - ecm/time_tracking/tracker_calculation_schema/index
       - ecm/time_tracking/tracker_calculation_schema/show
+    ecm/time_tracking/user:
+      - ecm/time_tracking/backend/engine
+      - ecm/time_tracking/entry/index
+      - ecm/time_tracking/entry/show
